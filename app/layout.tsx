@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { PostHogProvider } from "./providers";
+import { ConsentProvider } from "@/lib/consent";
+import { PostHogProvider, ConditionalAnalytics } from "./providers";
 import { PostHogPageView } from "./PostHogPageView";
+import CookieConsent from "@/components/CookieConsent";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "VideoChorus - Telecharger des videos TikTok",
-  description: "Telecharge tes videos TikTok preferees en HD, avec ou sans watermark",
+  title: "VideoChorus - Télécharger des vidéos TikTok",
+  description: "Télécharge tes vidéos TikTok préférées en HD, avec ou sans watermark",
 };
 
 export default function RootLayout({
@@ -31,12 +31,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <PostHogProvider>
-          <PostHogPageView />
-          {children}
-          <Analytics />
-          <SpeedInsights />
-        </PostHogProvider>
+        <ConsentProvider>
+          <PostHogProvider>
+            <PostHogPageView />
+            {children}
+            <ConditionalAnalytics />
+          </PostHogProvider>
+          <CookieConsent />
+        </ConsentProvider>
       </body>
     </html>
   );

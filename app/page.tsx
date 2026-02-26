@@ -5,6 +5,7 @@ import { usePostHog } from "posthog-js/react";
 import DownloadForm from "@/components/DownloadForm";
 import VideoPreview from "@/components/VideoPreview";
 import DownloadOptions from "@/components/DownloadOptions";
+import Footer from "@/components/Footer";
 import { TikTokVideo } from "@/lib/tiktok";
 
 export default function Home() {
@@ -53,7 +54,7 @@ export default function Home() {
             Video<span className="text-pink-500">Chorus</span>
           </h1>
           <p className="text-white/70 text-lg max-w-md mx-auto">
-            Telecharge tes videos TikTok preferees en HD, avec ou sans watermark
+            Télécharge tes vidéos TikTok préférées en HD, avec ou sans watermark
           </p>
         </header>
 
@@ -83,9 +84,7 @@ export default function Home() {
           )}
         </div>
 
-        <footer className="text-center mt-16 text-white/40 text-sm">
-          <p>VideoChorus - Telecharge tes videos TikTok facilement</p>
-        </footer>
+        <Footer />
       </div>
     </div>
   );

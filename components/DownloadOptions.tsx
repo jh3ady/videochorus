@@ -24,7 +24,7 @@ export default function DownloadOptions({ video }: DownloadOptionsProps) {
   };
 
   return (
-    <div className="w-full max-w-md space-y-3">
+    <div className="w-full max-w-xs space-y-3">
       <button
         onClick={() => handleDownload(video.downloadUrls.noWatermark, "video", "no_watermark")}
         className="w-full flex items-center justify-between px-5 py-4 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-semibold rounded-xl transition-all group"

@@ -25,8 +25,8 @@ function formatNumber(num: number): string {
 
 export default function VideoPreview({ video }: VideoPreviewProps) {
   return (
-    <div className="w-full max-w-md bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20">
-      <div className="relative aspect-[9/16] max-h-80">
+    <div className="w-full max-w-xs bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20">
+      <div className="relative aspect-[9/16]">
         <Image
           src={video.thumbnail}
           alt={video.title}
