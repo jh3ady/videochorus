@@ -45,6 +45,18 @@ export async function generateMetadata({
       "téléchargement TikTok",
       "sauvegarde vidéo TikTok",
       "TikTok video download",
+      "descargar vídeo TikTok",
+      "sin marca de agua",
+      "descarga TikTok",
+      "TikTok-Video herunterladen",
+      "ohne Wasserzeichen",
+      "TikTok herunterladen",
+      "baixar vídeo TikTok",
+      "sem marca d'água",
+      "download TikTok português",
+      "scaricare video TikTok",
+      "senza filigrana",
+      "TikTok download italiano",
     ],
     robots: "index, follow",
     alternates: {
@@ -52,6 +64,10 @@ export async function generateMetadata({
       languages: {
         en: "/",
         fr: "/fr",
+        es: "/es",
+        de: "/de",
+        pt: "/pt",
+        it: "/it",
       },
     },
     icons: {
@@ -62,7 +78,7 @@ export async function generateMetadata({
       description: t("description"),
       url: "https://videochorus.jdevelop.io",
       siteName: "VideoChorus",
-      locale: locale === "fr" ? "fr_FR" : "en_US",
+      locale: ({ fr: "fr_FR", en: "en_US", es: "es_ES", de: "de_DE", pt: "pt_PT", it: "it_IT" } as Record<string, string>)[locale] ?? "en_US",
       type: "website",
     },
     twitter: {
