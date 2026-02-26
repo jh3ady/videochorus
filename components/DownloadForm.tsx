@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { usePostHog } from "posthog-js/react";
 
 interface DownloadFormProps {
   onSearch: (url: string) => void;
@@ -8,6 +9,7 @@ interface DownloadFormProps {
 }
 
 export default function DownloadForm({ onSearch, isLoading }: DownloadFormProps) {
+  const posthog = usePostHog();
   const [url, setUrl] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -20,6 +22,7 @@ export default function DownloadForm({ onSearch, isLoading }: DownloadFormProps)
   const handlePaste = async () => {
     try {
       const text = await navigator.clipboard.readText();
+      posthog.capture("url_paste");
       setUrl(text);
     } catch {
       // Clipboard access denied

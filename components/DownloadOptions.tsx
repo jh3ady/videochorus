@@ -1,5 +1,6 @@
 "use client";
 
+import { usePostHog } from "posthog-js/react";
 import { TikTokVideo } from "@/lib/tiktok";
 
 interface DownloadOptionsProps {
@@ -7,7 +8,15 @@ interface DownloadOptionsProps {
 }
 
 export default function DownloadOptions({ video }: DownloadOptionsProps) {
-  const handleDownload = (url: string, type: string) => {
+  const posthog = usePostHog();
+
+  const handleDownload = (url: string, type: string, variant: string) => {
+    posthog.capture("video_download", {
+      video_id: video.id,
+      author: video.author.name,
+      type,
+      variant,
+    });
     const extension = type === "audio" ? "mp3" : "mp4";
     const filename = `${video.author.name}-${video.id}.${extension}`;
     const downloadUrl = `/api/download?url=${encodeURIComponent(url)}&filename=${encodeURIComponent(filename)}`;
@@ -17,7 +26,7 @@ export default function DownloadOptions({ video }: DownloadOptionsProps) {
   return (
     <div className="w-full max-w-md space-y-3">
       <button
-        onClick={() => handleDownload(video.downloadUrls.noWatermark, "video")}
+        onClick={() => handleDownload(video.downloadUrls.noWatermark, "video", "no_watermark")}
         className="w-full flex items-center justify-between px-5 py-4 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-semibold rounded-xl transition-all group"
       >
         <span className="flex items-center gap-3">
@@ -30,7 +39,7 @@ export default function DownloadOptions({ video }: DownloadOptionsProps) {
       </button>
 
       <button
-        onClick={() => handleDownload(video.downloadUrls.withWatermark, "video")}
+        onClick={() => handleDownload(video.downloadUrls.withWatermark, "video", "with_watermark")}
         className="w-full flex items-center justify-between px-5 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium rounded-xl transition-all group"
       >
         <span className="flex items-center gap-3">
@@ -43,7 +52,7 @@ export default function DownloadOptions({ video }: DownloadOptionsProps) {
       </button>
 
       <button
-        onClick={() => handleDownload(video.downloadUrls.audio, "audio")}
+        onClick={() => handleDownload(video.downloadUrls.audio, "audio", "audio_only")}
         className="w-full flex items-center justify-between px-5 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium rounded-xl transition-all group"
       >
         <span className="flex items-center gap-3">

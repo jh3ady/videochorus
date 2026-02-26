@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { usePostHog } from "posthog-js/react";
 import DownloadForm from "@/components/DownloadForm";
 import VideoPreview from "@/components/VideoPreview";
 import DownloadOptions from "@/components/DownloadOptions";
 import { TikTokVideo } from "@/lib/tiktok";
 
 export default function Home() {
+  const posthog = usePostHog();
   const [video, setVideo] = useState<TikTokVideo | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -15,6 +17,8 @@ export default function Home() {
     setIsLoading(true);
     setError(null);
     setVideo(null);
+
+    posthog.capture("video_search", { url });
 
     try {
       const response = await fetch("/api/video", {
@@ -33,7 +37,9 @@ export default function Home() {
 
       setVideo(data.video);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Une erreur est survenue");
+      const message = err instanceof Error ? err.message : "Une erreur est survenue";
+      posthog.capture("video_search_error", { url, error: message });
+      setError(message);
     } finally {
       setIsLoading(false);
     }
