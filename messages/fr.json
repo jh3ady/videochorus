@@ -1,0 +1,216 @@
+{
+  "metadata": {
+    "home": {
+      "title": "VideoChorus - Télécharger des vidéos TikTok",
+      "description": "Télécharge tes vidéos TikTok préférées en HD, avec ou sans watermark"
+    },
+    "cgu": {
+      "title": "Conditions Générales d'Utilisation - VideoChorus",
+      "description": "Conditions générales d'utilisation du service VideoChorus, outil de téléchargement de vidéos TikTok édité par JDevelop."
+    },
+    "mentionsLegales": {
+      "title": "Mentions légales - VideoChorus",
+      "description": "Mentions légales de VideoChorus : éditeur JDevelop, hébergeur Vercel, propriété intellectuelle et données personnelles."
+    },
+    "privacyPolicy": {
+      "title": "Politique de confidentialité - VideoChorus",
+      "description": "Politique de confidentialité de VideoChorus : cookies, données collectées, droits RGPD et transferts de données."
+    }
+  },
+  "home": {
+    "tagline": "Télécharge tes vidéos TikTok préférées en HD, avec ou sans watermark",
+    "placeholder": "Colle un lien TikTok pour commencer",
+    "fetchError": "Erreur lors de la récupération",
+    "genericError": "Une erreur est survenue"
+  },
+  "downloadForm": {
+    "label": "Lien TikTok",
+    "placeholder": "Colle le lien TikTok ici...",
+    "paste": "Coller",
+    "loading": "Chargement...",
+    "search": "Rechercher"
+  },
+  "downloadOptions": {
+    "noWatermark": "HD Sans watermark",
+    "recommended": "Recommandé",
+    "withWatermark": "Avec watermark",
+    "audioOnly": "Audio seulement"
+  },
+  "cookieConsent": {
+    "ariaLabel": "Gestion des cookies",
+    "message": "Ce site utilise des cookies d'analyse pour améliorer votre expérience. Aucun cookie publicitaire n'est utilisé.",
+    "learnMore": "En savoir plus",
+    "refuse": "Refuser",
+    "customize": "Personnaliser",
+    "acceptAll": "Accepter tout",
+    "customizeTitle": "Personnalisez vos préférences de cookies :",
+    "essentialCookies": "Cookies essentiels",
+    "essentialDescription": "Nécessaires au fonctionnement du site",
+    "alwaysActive": "Toujours actifs",
+    "analyticsCookies": "Cookies d'analyse",
+    "analyticsDescription": "PostHog, Vercel Analytics — mesure d'audience anonyme",
+    "analyticsAriaLabel": "Cookies d'analyse",
+    "back": "Retour",
+    "saveChoices": "Enregistrer mes choix"
+  },
+  "cookieSettings": {
+    "manage": "Gérer les cookies"
+  },
+  "footer": {
+    "legalNotice": "Mentions légales",
+    "privacyPolicy": "Politique de confidentialité",
+    "terms": "CGU"
+  },
+  "common": {
+    "backToHome": "Retour à l'accueil"
+  },
+  "cgu": {
+    "title": "Conditions Générales d'Utilisation",
+    "lastUpdated": "Dernière mise à jour : 26 février 2026",
+    "s1": {
+      "title": "1. Objet",
+      "p1": "Les présentes Conditions Générales d'Utilisation (CGU) ont pour objet de définir les modalités et conditions d'accès et d'utilisation du service VideoChorus, édité par JDevelop."
+    },
+    "s2": {
+      "title": "2. Accès au service",
+      "p1": "VideoChorus est un service en ligne gratuit accessible depuis un navigateur web. Aucune inscription ni création de compte n'est nécessaire. L'éditeur se réserve le droit de modifier, suspendre ou interrompre le service à tout moment, sans préavis ni indemnité."
+    },
+    "s3": {
+      "title": "3. Utilisation du service",
+      "p1": "L'utilisateur s'engage à utiliser VideoChorus de manière conforme à la législation en vigueur et aux présentes CGU. L'utilisateur est seul responsable de l'utilisation qu'il fait du service et des contenus qu'il télécharge.",
+      "p2": "L'utilisateur s'engage notamment à :",
+      "li1": "Respecter les droits de propriété intellectuelle des créateurs de contenu",
+      "li2": "Ne pas utiliser le service à des fins illicites ou contraires à l'ordre public",
+      "li3": "Ne télécharger que des contenus pour lesquels il dispose des droits nécessaires ou dont l'utilisation est autorisée",
+      "li4": "Ne pas tenter de perturber le fonctionnement du service"
+    },
+    "s4": {
+      "title": "4. Propriété intellectuelle",
+      "p1": "L'ensemble des éléments constituant le site VideoChorus (design, code source, logos, textes) est la propriété exclusive de JDevelop et est protégé par le droit de la propriété intellectuelle.",
+      "p2": "Les vidéos téléchargées via le service restent la propriété de leurs auteurs respectifs. VideoChorus ne revendique aucun droit sur ces contenus et agit uniquement comme intermédiaire technique."
+    },
+    "s5": {
+      "title": "5. Limitation de responsabilité",
+      "p1": "Le service est fourni « en l'état », sans garantie d'aucune sorte. JDevelop ne saurait être tenu responsable :",
+      "li1": "Des interruptions temporaires ou permanentes du service",
+      "li2": "De l'utilisation faite par l'utilisateur des contenus téléchargés",
+      "li3": "De tout dommage direct ou indirect résultant de l'utilisation du service",
+      "li4": "De la disponibilité ou de la qualité des contenus tiers accessibles via le service"
+    },
+    "s6": {
+      "title": "6. Données personnelles",
+      "p1": "Le traitement des données personnelles est décrit dans notre <link>politique de confidentialité</link>."
+    },
+    "s7": {
+      "title": "7. Modification des CGU",
+      "p1": "JDevelop se réserve le droit de modifier les présentes CGU à tout moment. Les modifications prennent effet dès leur publication sur le site. L'utilisation continue du service après modification vaut acceptation des nouvelles CGU."
+    },
+    "s8": {
+      "title": "8. Droit applicable et juridiction",
+      "p1": "Les présentes CGU sont régies par le droit français. En cas de litige relatif à l'interprétation ou à l'exécution des présentes, et à défaut de résolution amiable, les tribunaux compétents de Toulouse seront seuls compétents."
+    }
+  },
+  "mentionsLegales": {
+    "title": "Mentions légales",
+    "s1": {
+      "title": "Éditeur du site",
+      "company": "JDevelop",
+      "companyType": ", société à responsabilité limitée (SARL)",
+      "siren": "SIREN : 938 123 072",
+      "siret": "SIRET : 938 123 072 00010",
+      "naf": "Code NAF : 6202A — Conseil en systèmes et logiciels informatiques",
+      "address": "Siège social : 6 Place du Président Thomas Woodrow Wilson, 31000 Toulouse, France"
+    },
+    "s2": {
+      "title": "Directeur de la publication",
+      "name": "Jean-Denis VIDOT",
+      "contact": "Contact :"
+    },
+    "s3": {
+      "title": "Hébergeur",
+      "company": "Vercel Inc.",
+      "address": "440 N Barranca Ave #4133, Covina, CA 91723, États-Unis",
+      "website": "Site web :"
+    },
+    "s4": {
+      "title": "Propriété intellectuelle",
+      "p1": "L'ensemble du contenu de ce site (structure, textes, logos, images, code source) est la propriété exclusive de JDevelop, sauf mention contraire. Toute reproduction, représentation ou diffusion, en tout ou partie, du contenu de ce site sans autorisation préalable est interdite et constitue une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle."
+    },
+    "s5": {
+      "title": "Données personnelles",
+      "p1": "Pour toute information relative à la collecte et au traitement des données personnelles, veuillez consulter notre <link>politique de confidentialité</link>."
+    }
+  },
+  "privacyPolicy": {
+    "title": "Politique de confidentialité",
+    "lastUpdated": "Dernière mise à jour : 26 février 2026",
+    "s1": {
+      "title": "1. Responsable du traitement",
+      "p1": "Le responsable du traitement des données personnelles est :",
+      "company": "JDevelop",
+      "companyDetails": ", SARL au capital variable",
+      "siren": "SIREN : 938 123 072",
+      "address": "Siège social : 6 Place du Président Thomas Woodrow Wilson, 31000 Toulouse, France",
+      "contact": "Contact :"
+    },
+    "s2": {
+      "title": "2. Données collectées",
+      "p1": "VideoChorus ne requiert aucune création de compte et ne collecte aucune donnée personnelle directement identifiante. Les seules données traitées sont des données d'analyse anonymes, collectées via des cookies soumis à votre consentement préalable."
+    },
+    "s3": {
+      "title": "3. Cookies et traceurs",
+      "p1": "Ce site utilise les cookies et traceurs suivants, uniquement après obtention de votre consentement :",
+      "posthog": "PostHog (analyse d'audience)",
+      "posthogLi1": "Pages vues",
+      "posthogLi2": "Départ de page",
+      "posthogLi3": "Recherche de vidéo",
+      "posthogLi4": "Téléchargement de vidéo",
+      "posthogLi5": "Erreur de recherche",
+      "vercel": "Vercel Analytics et Speed Insights",
+      "vercelLi1": "Métriques de performance (Web Vitals : LCP, FID, CLS, etc.)",
+      "vercelLi2": "Données de navigation anonymes",
+      "p2": "Ces cookies ont une durée de validité maximale de 13 mois conformément aux recommandations de la CNIL. Vous pouvez modifier vos préférences à tout moment via le lien « Gérer les cookies » en bas de chaque page."
+    },
+    "s4": {
+      "title": "4. Base légale du traitement",
+      "p1": "Le traitement des données d'analyse repose sur votre consentement (article 6, paragraphe 1, point a) du Règlement général sur la protection des données — RGPD). Vous pouvez retirer votre consentement à tout moment."
+    },
+    "s5": {
+      "title": "5. Durée de conservation",
+      "p1": "Les données d'analyse sont conservées pour une durée maximale de 25 mois à compter de leur collecte, conformément aux recommandations de la CNIL."
+    },
+    "s6": {
+      "title": "6. Vos droits",
+      "p1": "Conformément au RGPD, vous disposez des droits suivants :",
+      "access": "Droit d'accès",
+      "accessDesc": " : obtenir la confirmation que des données vous concernant sont traitées et en recevoir une copie",
+      "rectification": "Droit de rectification",
+      "rectificationDesc": " : demander la correction de données inexactes",
+      "erasure": "Droit à l'effacement",
+      "erasureDesc": " : demander la suppression de vos données",
+      "objection": "Droit d'opposition",
+      "objectionDesc": " : vous opposer au traitement de vos données",
+      "portability": "Droit à la portabilité",
+      "portabilityDesc": " : recevoir vos données dans un format structuré et lisible par machine",
+      "withdrawal": "Droit de retirer votre consentement",
+      "withdrawalDesc": " à tout moment via le lien « Gérer les cookies »",
+      "p2": "Pour exercer ces droits, contactez-nous à",
+      "p3": "En cas de litige, vous pouvez introduire une réclamation auprès de la Commission Nationale de l'Informatique et des Libertés (CNIL) :"
+    },
+    "s7": {
+      "title": "7. Transferts de données hors Union européenne",
+      "p1": "Les données collectées peuvent être transférées vers les États-Unis via les services suivants :",
+      "posthog": "PostHog Inc.",
+      "posthogDesc": " (hébergement US) — traitement des données d'analyse",
+      "vercel": "Vercel Inc.",
+      "vercelDesc": " (hébergement US) — hébergement du site et métriques de performance",
+      "p2": "Ces transferts sont encadrés par des clauses contractuelles types (CCT) approuvées par la Commission européenne, conformément à l'article 46 du RGPD."
+    }
+  },
+  "structuredData": {
+    "description": "Télécharge tes vidéos TikTok préférées en HD, avec ou sans watermark"
+  },
+  "languageSwitcher": {
+    "label": "Langue"
+  }
+}

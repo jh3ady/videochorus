@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { useConsent } from "@/lib/consent";
 
 export default function CookieConsent() {
+  const t = useTranslations("cookieConsent");
   const { consent, isReady, showBanner, acceptAll, refuseAll, updateConsent } =
     useConsent();
   const [showCustomize, setShowCustomize] = useState(false);
@@ -15,77 +17,81 @@ export default function CookieConsent() {
   if (!isReady || !showBanner) return null;
 
   return (
-    <div className="fixed bottom-0 inset-x-0 z-50 bg-gray-900/95 backdrop-blur-sm border-t border-white/10 p-4 md:p-6">
+    <div
+      role="dialog"
+      aria-label={t("ariaLabel")}
+      className="fixed bottom-0 inset-x-0 z-50 bg-gray-950/95 backdrop-blur-xl border-t border-white/5 p-4 md:p-6 pb-[env(safe-area-inset-bottom,16px)] animate-fade-in-up"
+    >
       <div className="max-w-4xl mx-auto">
         {!showCustomize ? (
           <>
             <p className="text-white/80 text-sm mb-4">
-              Ce site utilise des cookies d&apos;analyse pour améliorer votre
-              expérience. Aucun cookie publicitaire n&apos;est utilisé.{" "}
+              {t("message")}{" "}
               <Link
-                href="/politique-de-confidentialite"
-                className="text-pink-400 hover:text-pink-300 underline"
+                href="/privacy-policy"
+                className="text-violet-400 hover:text-violet-300 underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:rounded"
               >
-                En savoir plus
+                {t("learnMore")}
               </Link>
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <button
                 onClick={refuseAll}
-                className="flex-1 px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium rounded-lg transition-colors text-sm"
+                className="flex-1 px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium rounded-lg transition-colors text-sm active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
               >
-                Refuser
+                {t("refuse")}
               </button>
               <button
                 onClick={() => {
                   setAnalyticsToggle(consent?.analytics ?? false);
                   setShowCustomize(true);
                 }}
-                className="flex-1 px-5 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 text-white/70 hover:text-white font-medium rounded-lg transition-colors text-sm"
+                className="flex-1 px-5 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 text-white/70 hover:text-white font-medium rounded-lg transition-colors text-sm active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
               >
-                Personnaliser
+                {t("customize")}
               </button>
               <button
                 onClick={acceptAll}
-                className="flex-1 px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium rounded-lg transition-colors text-sm"
+                className="flex-1 px-5 py-2.5 bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-violet-600 hover:to-fuchsia-600 text-white font-medium rounded-lg transition-colors text-sm active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
-                Accepter tout
+                {t("acceptAll")}
               </button>
             </div>
           </>
         ) : (
           <>
             <p className="text-white/80 text-sm mb-4">
-              Personnalisez vos préférences de cookies :
+              {t("customizeTitle")}
             </p>
             <div className="space-y-3 mb-4">
               <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                 <div>
                   <p className="text-white text-sm font-medium">
-                    Cookies essentiels
+                    {t("essentialCookies")}
                   </p>
                   <p className="text-white/50 text-xs">
-                    Nécessaires au fonctionnement du site
+                    {t("essentialDescription")}
                   </p>
                 </div>
-                <span className="text-white/40 text-xs">Toujours actifs</span>
+                <span className="text-white/50 text-xs">{t("alwaysActive")}</span>
               </div>
               <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                 <div>
                   <p className="text-white text-sm font-medium">
-                    Cookies d&apos;analyse
+                    {t("analyticsCookies")}
                   </p>
                   <p className="text-white/50 text-xs">
-                    PostHog, Vercel Analytics &mdash; mesure d&apos;audience
-                    anonyme
+                    {t("analyticsDescription")}
                   </p>
                 </div>
                 <button
+                  role="switch"
+                  aria-checked={analyticsToggle}
+                  aria-label={t("analyticsAriaLabel")}
                   onClick={() => setAnalyticsToggle(!analyticsToggle)}
-                  className={`relative w-11 h-6 rounded-full transition-colors ${
-                    analyticsToggle ? "bg-pink-500" : "bg-white/20"
+                  className={`relative w-11 h-6 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950 ${
+                    analyticsToggle ? "bg-violet-500" : "bg-white/20"
                   }`}
-                  aria-label="Activer ou désactiver les cookies d'analyse"
                 >
                   <span
                     className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full transition-transform ${
@@ -98,15 +104,15 @@ export default function CookieConsent() {
             <div className="flex flex-col sm:flex-row gap-3">
               <button
                 onClick={() => setShowCustomize(false)}
-                className="flex-1 px-5 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 text-white/70 hover:text-white font-medium rounded-lg transition-colors text-sm"
+                className="flex-1 px-5 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 text-white/70 hover:text-white font-medium rounded-lg transition-colors text-sm active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
               >
-                Retour
+                {t("back")}
               </button>
               <button
                 onClick={() => updateConsent({ analytics: analyticsToggle })}
-                className="flex-1 px-5 py-2.5 bg-pink-500 hover:bg-pink-600 text-white font-medium rounded-lg transition-colors text-sm"
+                className="flex-1 px-5 py-2.5 bg-violet-500 hover:bg-violet-600 text-white font-medium rounded-lg transition-colors text-sm active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
-                Enregistrer mes choix
+                {t("saveChoices")}
               </button>
             </div>
           </>
