@@ -3,6 +3,11 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Conditions Générales d'Utilisation - VideoChorus",
+  description:
+    "Conditions générales d'utilisation du service VideoChorus, outil de téléchargement de vidéos TikTok édité par JDevelop.",
+  alternates: {
+    canonical: "/cgu",
+  },
 };
 
 export default function CGU() {

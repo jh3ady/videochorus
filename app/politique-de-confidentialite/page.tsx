@@ -3,6 +3,11 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Politique de confidentialité - VideoChorus",
+  description:
+    "Politique de confidentialité de VideoChorus : cookies, données collectées, droits RGPD et transferts de données.",
+  alternates: {
+    canonical: "/politique-de-confidentialite",
+  },
 };
 
 export default function PolitiqueDeConfidentialite() {

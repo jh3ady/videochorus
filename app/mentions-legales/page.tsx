@@ -3,6 +3,11 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Mentions légales - VideoChorus",
+  description:
+    "Mentions légales de VideoChorus : éditeur JDevelop, hébergeur Vercel, propriété intellectuelle et données personnelles.",
+  alternates: {
+    canonical: "/mentions-legales",
+  },
 };
 
 export default function MentionsLegales() {
